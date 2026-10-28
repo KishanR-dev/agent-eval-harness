@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "FIX-PROVIDER-ERROR-001",
+  "description": "Simulated upstream provider outage raising AdapterError during Stage 2 outreach drafting after successful Stage 1 qualification.",
+  "is_synthetic": true,
+  "exchanges": [
+    {
+      "call_index": 0,
+      "stage": "lead_qualification",
+      "response_text": "{\"schema_version\": \"1.0.0\", \"lead_id\": \"synth_lead_001\", \"company_name\": \"Synthetix Cloud Systems\", \"industry\": \"Enterprise Cloud Infrastructure\", \"qualification_status\": \"QUALIFIED\", \"fit_score\": 88, \"summary\": \"Synthetix Cloud Systems is an enterprise infrastructure provider operating multi-cloud Kubernetes clusters with urgent SOC2 compliance and policy automation needs.\", \"key_pain_points\": [\"Manual SOC2 compliance auditing\", \"Multi-cloud Kubernetes policy enforcement\"], \"recommended_angle\": \"Position automated compliance engine focusing on accelerating SOC2 audit cycles across multi-cloud environments.\"}"
+    },
+    {
+      "call_index": 1,
+      "stage": "outreach_drafting",
+      "error_to_raise": "Simulated upstream 503 Service Unavailable: provider rate limit exceeded"
+    }
+  ]
+}

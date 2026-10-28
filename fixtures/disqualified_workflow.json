@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "FIX-DISQUALIFIED-001",
+  "description": "Single-stage disqualified prospect workflow where Stage 2 outreach is skipped by coordinator.",
+  "is_synthetic": true,
+  "exchanges": [
+    {
+      "call_index": 0,
+      "stage": "lead_qualification",
+      "response_text": "{\"schema_version\": \"1.0.0\", \"lead_id\": \"synth_lead_005\", \"company_name\": \"Small Local Hardware Synth\", \"industry\": \"Local Retail & Hardware\", \"qualification_status\": \"DISQUALIFIED\", \"fit_score\": 12, \"summary\": \"Non-target consumer hardware retailer with 4 employees and no enterprise cloud infrastructure or compliance requirements.\", \"key_pain_points\": [\"Point of sale receipt printer driver update\"], \"recommended_angle\": \"Not a fit for enterprise infrastructure solutions; do not pursue.\"}"
+    }
+  ]
+}

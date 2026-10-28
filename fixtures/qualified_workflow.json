@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "FIX-QUALIFIED-001",
+  "description": "Two-stage qualified enterprise lead workflow resulting in compliant outreach draft.",
+  "is_synthetic": true,
+  "exchanges": [
+    {
+      "call_index": 0,
+      "stage": "lead_qualification",
+      "response_text": "{\"schema_version\": \"1.0.0\", \"lead_id\": \"synth_lead_001\", \"company_name\": \"Synthetix Cloud Systems\", \"industry\": \"Enterprise Cloud Infrastructure\", \"qualification_status\": \"QUALIFIED\", \"fit_score\": 88, \"summary\": \"Synthetix Cloud Systems is an enterprise infrastructure provider operating multi-cloud Kubernetes clusters with urgent SOC2 compliance and policy automation needs.\", \"key_pain_points\": [\"Manual SOC2 compliance auditing\", \"Multi-cloud Kubernetes policy enforcement\"], \"recommended_angle\": \"Position automated compliance engine focusing on accelerating SOC2 audit cycles across multi-cloud environments.\"}"
+    },
+    {
+      "call_index": 1,
+      "stage": "outreach_drafting",
+      "response_text": "{\"schema_version\": \"1.0.0\", \"lead_id\": \"synth_lead_001\", \"channel\": \"EMAIL\", \"subject_line\": \"Accelerating SOC2 compliance for Synthetix Cloud\", \"body\": \"Hi team, noticed Synthetix is managing multi-cloud Kubernetes deployments. We help infrastructure teams accelerate SOC2 compliance and automate policy enforcement without adding audit overhead. Would you be open to a 10-minute technical exchange next Tuesday?\", \"call_to_action\": \"Open to a brief 10-minute technical exchange next Tuesday?\", \"disclaimers_included\": []}"
+    }
+  ]
+}

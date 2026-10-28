@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  deterministic-ci:
+    name: Deterministic Quality Gates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          version: "latest"
+
+      - name: Set up Python 3.11
+        run: uv python install 3.11
+
+      - name: Install dependencies
+        run: uv sync --all-extras --dev
+
+      - name: Static secret scan
+        run: uv run python scripts/scan_secrets.py
+
+      - name: Format check (Ruff)
+        run: uv run ruff format --check .
+
+      - name: Lint check (Ruff)
+        run: uv run ruff check .
+
+      - name: Static type check (Mypy)
+        run: uv run mypy src tests scripts
+
+      - name: Offline test suite with coverage gate (Pytest)
+        run: uv run pytest --cov=agent_eval_harness --cov-report=term-missing --cov-fail-under=90 tests/
