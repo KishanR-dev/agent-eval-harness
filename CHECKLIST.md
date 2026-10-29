@@ -18,7 +18,7 @@ Rules:
 - [x] Add tests for valid payloads, missing required fields, wrong types, prohibited extra fields where applicable, and unsupported schema versions.
 - [x] Ensure tests run locally using PowerShell-compatible commands and require no provider key or network access.
 - [x] Add `.gitignore` protection for `.env`, virtual environments, caches, and generated artifacts as applicable; create `.env.example` with placeholders only if configuration files are introduced.
-- [x] Check changed files for credentials, tokens, real personal/company data, and AI/tool co-author attribution.
+- [x] Check changed files for credentials, tokens, real personal/company data, and assistant/tool attribution.
 - [x] Run the relevant tests and record the exact command, exit status, and actual test count.
 - [x] Update `SPEC.md`, `PLAN.md`, `CHECKLIST.md`, and `DECISIONS.md` if implementation decisions differ from this plan.
 - [x] Stop. Do not implement agents, coordinator, dataset, judge, fixtures, CI, tracing, or README polish in this item.
@@ -203,7 +203,7 @@ Rules:
 - [x] Document project purpose, architecture, PowerShell quickstart, deterministic/live tiers, limitations, and roadmap.
 - [x] Publish only measured results with date, commit SHA, dataset version, model identifier where relevant, and configuration.
 - [x] Create a controlled demo branch or test that causes an intended check to fail. *(Demonstrated via 13 offline tests in `tests/test_regression_demonstration.py` covering planted token leakage, word count ceiling breaches, semantic score drops, coordinator failures, and CLI exit codes 0–4 without requiring a premature Git commit).*
-- [x] Check repository files, commit messages, and trailers for AI/tool co-author attribution before commit/push.
+- [x] Check repository files, commit messages, and trailers for assistant/tool attribution before commit/push.
 - [x] Review all docs for invented metrics, secrets, misleading benchmark claims, and unsupported reliability claims.
 
 **Acceptance criteria**
@@ -220,5 +220,5 @@ Rules:
 - Baseline comparison CLI verified (`compare_cli.py` tested for all exit codes 0–4).
 - `README.md` rewritten with comprehensive architecture, setup, evaluation tiers, fixture replay, CI workflow, decisions summary, and explicit limitations.
 - Reconciled tracking across `SPEC.md`, `PLAN.md`, `CHECKLIST.md`, and `README.md` to distinguish implementation completion from formal reviewer acceptance.
-- Preserved zero AI/tool attribution, zero committed secrets, and untouched `agent-eval-harness-docs.zip`.
+- Preserved zero assistant/tool attribution, zero committed secrets, and untouched `agent-eval-harness-docs.zip`.
 - No commit or push was performed.

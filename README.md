@@ -149,6 +149,13 @@ Safety: fixtures require `is_synthetic=True` and are scanned for common credenti
 uv sync --all-extras --dev
 ```
 
+### Launch Evaluation Playground (Optional UI)
+
+```powershell
+uv sync --extra playground --dev
+.venv\Scripts\python src/agent_eval_harness/playground/app.py
+```
+
 ### Run quality gates
 
 ```powershell

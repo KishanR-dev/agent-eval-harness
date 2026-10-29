@@ -65,7 +65,7 @@ Initial review of the draft. These decisions guide implementation unless the pro
 - **Consequences:** Mark unknowns as unknown; record skipped tests and unverified assumptions honestly.
 
 ## D-011 — Repository attribution hygiene
-- **Decision:** Do not introduce AI/tool co-author attribution in commits or repository content. Inspect commit messages, trailers, and files before commit/push.
+- **Decision:** Do not introduce tool-specific or assistant co-author attribution in commits or repository content. Inspect commit messages, trailers, and files before commit/push.
 - **Draft change:** Adds an explicit acceptance check.
 - **Rationale:** Maintains the owner's repository presentation requirements.
 - **Consequences:** Preserve existing published history; do not rewrite or force-push history to remove prior attribution without explicit authorization.
