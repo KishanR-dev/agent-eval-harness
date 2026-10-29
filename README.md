@@ -214,8 +214,8 @@ Development commands use Windows PowerShell path separators (`\`). On Linux/macO
 | 3. Synthetic dataset + deterministic checks | ✅ Accepted | 128 | 100% | 100% |
 | 4. Rubric-based LLM judge | ✅ Accepted | 162 | 100% | 100% |
 | 5. Fixture record/replay | ✅ Accepted | 194 | 100% | 100% |
-| 6. CI + baseline policy (Phases A–C) | ✅ Accepted | 239 | 100% (1049/1049) | 100% (282/282) |
-| 8. README + repository closeout | Implemented & verified (pending review) | 239 | 100% (1049/1049) | 100% (282/282) |
+| 6. CI + baseline policy (Phases A–C) | ✅ Accepted | 248 | 100% (1049/1049) | 100% (282/282) |
+| 8. README + repository closeout | Implemented & verified | 248 | 99.12% (1153/1161 stmts) | 98.41% (309/314 branches) |
 
 ### Formally deferred (D-022)
 
@@ -247,7 +247,7 @@ agent-eval-harness/
 │   ├── evaluation/         # Dataset loading, checks, judge, rubric, runner, baseline, CLI
 │   ├── coordinator.py      # WorkflowCoordinator (D-017)
 │   └── exceptions.py       # Typed exception hierarchy
-├── tests/                  # 239 offline deterministic tests
+├── tests/                  # 248 offline deterministic tests
 ├── datasets/               # 20-case synthetic evaluation dataset
 ├── fixtures/               # Canonical replay fixtures (4 files)
 ├── scripts/                # Static secret scanner

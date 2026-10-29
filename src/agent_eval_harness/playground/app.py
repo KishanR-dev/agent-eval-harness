@@ -209,6 +209,7 @@ def run_scenario(display_name: str) -> tuple[str, str, str, str, str]:
     if case_id != eval_result.case_id:
         raw_dict = {"scenario_id": case_id, **raw_dict}
     import json
+
     raw_json_summary = json.dumps(raw_dict, indent=2)
     return workflow_md, checks_md, judge_md, verdict_md, raw_json_summary
 
