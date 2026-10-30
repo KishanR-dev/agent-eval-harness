@@ -55,14 +55,17 @@ class LeadInput(StrictBaseModel):
     @field_validator("company_name")
     @classmethod
     def validate_company_name(cls, v: str) -> str:
+        """Ensure company name is a non-empty string."""
         return ensure_non_empty_string(v, "company_name")
 
     @field_validator("industry")
     @classmethod
     def validate_industry(cls, v: str) -> str:
+        """Ensure industry is a non-empty string."""
         return ensure_non_empty_string(v, "industry")
 
     @field_validator("notes")
     @classmethod
     def validate_notes(cls, v: str) -> str:
+        """Ensure notes are a non-empty string."""
         return ensure_non_empty_string(v, "notes")

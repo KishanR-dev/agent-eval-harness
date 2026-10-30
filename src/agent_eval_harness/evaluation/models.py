@@ -121,6 +121,7 @@ class RawJudgeResponse(StrictBaseModel):
 
     @model_validator(mode="after")
     def validate_exact_dimensions(self) -> "RawJudgeResponse":
+        """Validate that raw judge response contains exactly the expected rubric dimensions."""
         expected_dimensions = set(RubricDimension)
         if len(self.scores) != len(expected_dimensions):
             raise ValueError(
@@ -188,6 +189,7 @@ class JudgeVerdict(StrictBaseModel):
 
     @model_validator(mode="after")
     def validate_verdict_invariants(self) -> "JudgeVerdict":
+        """Validate verdict status invariants, dimension scores, and error fields."""
         expected_dimensions = set(RubricDimension)
 
         if self.status in (JudgeStatus.COMPLETED_PASS, JudgeStatus.COMPLETED_FAIL):

@@ -52,16 +52,19 @@ class OutreachDraftResult(StrictBaseModel):
     @field_validator("body")
     @classmethod
     def validate_body(cls, v: str) -> str:
+        """Ensure body is a non-empty string."""
         return ensure_non_empty_string(v, "body")
 
     @field_validator("call_to_action")
     @classmethod
     def validate_call_to_action(cls, v: str) -> str:
+        """Ensure call-to-action is a non-empty string."""
         return ensure_non_empty_string(v, "call_to_action")
 
     @field_validator("subject_line")
     @classmethod
     def validate_subject_line(cls, v: str | None) -> str | None:
+        """Ensure subject line, if provided, is a non-empty string."""
         if v is not None:
             return ensure_non_empty_string(v, "subject_line")
         return v
@@ -69,6 +72,7 @@ class OutreachDraftResult(StrictBaseModel):
     @field_validator("disclaimers_included")
     @classmethod
     def validate_disclaimers(cls, items: list[str]) -> list[str]:
+        """Ensure all included disclaimers are non-empty strings."""
         for i, item in enumerate(items):
             ensure_non_empty_string(item, f"disclaimers_included[{i}]")
         return items

@@ -22,6 +22,7 @@ class AgentExecutionError(HarnessError):
         message: str,
         original_exception: Exception | None = None,
     ) -> None:
+        """Initialize the error with sanitized stage, category, and message details."""
         super().__init__(f"[{stage}] {error_category}: {message}")
         self.stage = stage
         self.error_category = error_category

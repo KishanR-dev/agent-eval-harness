@@ -91,6 +91,7 @@ class RunMetadata(StrictBaseModel):
 
     @model_validator(mode="after")
     def validate_metadata_invariants(self) -> RunMetadata:
+        """Validate run metadata invariants for live vs replay execution modes."""
         if self.execution_mode == "replay":
             if self.model_id is not None and self.model_id != "offline-replay":
                 raise ValueError(
@@ -115,6 +116,7 @@ class BaselineRecord(StrictBaseModel):
 
     @model_validator(mode="after")
     def validate_baseline_invariants(self) -> BaselineRecord:
+        """Validate baseline consistency between case results, counts, and pass rate."""
         if self.total_cases != len(self.case_results):
             raise ValueError(
                 f"total_cases ({self.total_cases}) does not match "

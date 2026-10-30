@@ -39,6 +39,7 @@ class RecordedExchange(StrictBaseModel):
 
     @model_validator(mode="after")
     def validate_exchange_payload(self) -> "RecordedExchange":
+        """Validate mutual exclusivity of response and error, and prevent credential leakage."""
         has_response = self.response_text is not None and bool(self.response_text.strip())
         has_error = self.error_to_raise is not None and bool(self.error_to_raise.strip())
 
@@ -76,6 +77,7 @@ class ReplayFixture(StrictBaseModel):
 
     @model_validator(mode="after")
     def validate_fixture_invariants(self) -> "ReplayFixture":
+        """Validate fixture synthetic provenance and call index sequentiality."""
         if not self.is_synthetic:
             raise ValueError("ReplayFixture must have is_synthetic=True for offline testing")
 

@@ -73,21 +73,25 @@ class LeadQualificationResult(StrictBaseModel):
     @field_validator("company_name")
     @classmethod
     def validate_company_name(cls, v: str) -> str:
+        """Ensure company name is a non-empty string."""
         return ensure_non_empty_string(v, "company_name")
 
     @field_validator("industry")
     @classmethod
     def validate_industry(cls, v: str) -> str:
+        """Ensure industry is a non-empty string."""
         return ensure_non_empty_string(v, "industry")
 
     @field_validator("summary")
     @classmethod
     def validate_summary(cls, v: str) -> str:
+        """Ensure summary is a non-empty string."""
         return ensure_non_empty_string(v, "summary")
 
     @field_validator("key_pain_points")
     @classmethod
     def validate_pain_points(cls, items: list[str]) -> list[str]:
+        """Ensure all key pain points are non-empty strings."""
         for i, item in enumerate(items):
             ensure_non_empty_string(item, f"key_pain_points[{i}]")
         return items
@@ -95,6 +99,7 @@ class LeadQualificationResult(StrictBaseModel):
     @field_validator("recommended_angle")
     @classmethod
     def validate_recommended_angle(cls, v: str | None) -> str | None:
+        """Ensure recommended angle, if provided, is a non-empty string."""
         if v is not None:
             return ensure_non_empty_string(v, "recommended_angle")
         return v

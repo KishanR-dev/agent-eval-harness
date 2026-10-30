@@ -66,11 +66,13 @@ class OutreachHandoff(StrictBaseModel):
     @field_validator("target_persona")
     @classmethod
     def validate_target_persona(cls, v: str) -> str:
+        """Ensure target persona is a non-empty string."""
         return ensure_non_empty_string(v, "target_persona")
 
     @field_validator("constraints")
     @classmethod
     def validate_constraints(cls, items: list[str]) -> list[str]:
+        """Ensure all constraint items are non-empty strings."""
         for i, item in enumerate(items):
             ensure_non_empty_string(item, f"constraints[{i}]")
         return items
