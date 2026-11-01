@@ -1,5 +1,9 @@
 # agent-eval-harness
 
+
+https://github.com/user-attachments/assets/4c9484f9-a5a8-4d1b-875f-54507fa0a003
+
+
 Offline, deterministic evaluation and regression-testing harness for a two-stage LLM agent workflow.
 
 ## Problem
