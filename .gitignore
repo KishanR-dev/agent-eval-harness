@@ -51,3 +51,4 @@ htmlcov/
 
 # Runtime evaluation output artifacts (uncommitted runs)
 artifacts/runs/
+brag-output/
